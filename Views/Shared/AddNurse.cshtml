@@ -1,0 +1,43 @@
+﻿@model Guid
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNurse</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Добавление мед.сестры</h1>
+    <div align="center">
+        @using (Html.BeginForm("AddNurse2", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model">
+            <label>Введите фамилию мед.сестры</label>
+            <input type="text" name="Surname" /><br />
+            <label>Введите имя мед.сестры</label>
+            <input type="text" name="Name" /><br />
+            <label>Введите отчество мед.сестры</label>
+            <input type="text" name="Patronymic" /><br />
+            <label>Введите профессию</label>
+            <input type="text" name="Profession" /><br />
+            <input type="submit" value="Добавить мед.сестру" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

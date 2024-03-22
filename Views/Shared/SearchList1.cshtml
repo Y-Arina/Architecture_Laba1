@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Laba45.Models.Entity.Sick_List>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PrintLists</title>
+</head>
+<body>
+    <h1 align="center">Больничные листы</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>Фамилия пациента</th>
+            <th>ID</th>
+            <th>Место работы</th>
+            <th>Дата открытия больничного</th>
+            <th>Дата закрытия больничного</th>
+        </tr>
+        @{
+            foreach (var Lists in Model)
+            {
+                <tr>
+                    <td>@Lists.Patient.Surname</td>
+                    <td>@Lists.Id</td>
+                    <td>@Lists.PlaceWork</td>
+                    <td>@Lists.StartDate</td>
+                    <td>@Lists.FinishDate</td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

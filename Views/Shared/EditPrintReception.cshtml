@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Laba45.Models.Entity.Reception>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PrintReception</title>
+</head>
+<body>
+    <h1 align="center">Талоны</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>Фамилия врача</th>
+            <th>Фамилия пациента</th>
+            <th>ID</th>
+            <th>Дата записи</th>
+            <th>Время записи</th>
+            <th>Ссылка на изменение</th>
+        </tr>
+        @{
+            foreach (var Recep in Model)
+            {
+                <tr>
+                    <td>@Recep.Patient.Doctor.Surname</td>
+                    <td>@Recep.Patient.Surname</td>
+                    <td>@Recep.Id</td>
+                    <td>@Recep.Date</td>
+                    <td>@Recep.Time</td>
+                    <td><a href="/Hospital/EditReception/@Recep.Id">Изменение талона</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

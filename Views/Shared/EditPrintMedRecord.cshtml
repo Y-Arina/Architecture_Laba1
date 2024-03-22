@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Laba45.Models.Entity.Medical_Record>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PrintMedRecord</title>
+</head>
+<body>
+    <h1 align="center">Карты</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>Фамилия пациента</th>
+            <th>ID</th>
+            <th>Номер карты</th>
+            <th>Номер мед.полиса</th>
+            <th>Дата рождения</th>
+            <th>Номер телефона</th>
+            <th>Адрес</th>
+            <th>Ссылка на изменение</th>
+        </tr>
+        @{
+            foreach (var records in Model)
+            {
+                <tr>
+                    <td>@records.Patient.Surname</td>
+                    <td>@records.Id</td>
+                    <td>@records.NumberRecord</td>
+                    <td>@records.Insurance_policy</td>
+                    <td>@records.BirthDate</td>
+                    <td>@records.NumberPhone</td>
+                    <td>@records.Adress</td>
+                    <td><a href="/Hospital/EditMedRecord/@records.Id">Изменение карты</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

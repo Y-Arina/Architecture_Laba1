@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddHospitals</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Добавление больницы</h1>
+    <div align="center">
+         @using (Html.BeginForm("AddHospitalsCreate", "Hospital",FormMethod.Post))
+         {
+            <label>Введите номер больницы</label>
+            <input type="text" name="NumberHospital"/><br/>
+            <label>Введлите адрес больницы</label>
+            <input type="text" name="Adress"/><br />
+            <label>Введите номер телефона больницы</label>
+            <input type="text" name="NumberPhone"/><br />
+            <lable>Введите время начала работы больницы</lable>
+            <input type="text" name="StartHours"/><br />
+            <label>Введите время конца работы больницы</label>
+            <input type="text" name="FinishHours"/><br />
+            <input type="submit" value="Добавить больницу" class="b"/>
+          }
+    </div>
+
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

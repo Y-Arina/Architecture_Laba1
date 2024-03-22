@@ -1,0 +1,45 @@
+﻿@model Laba45.Models.Entity.Medical_Record
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddList</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("EditMedRecord1", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model.Id">
+            <label>Введите номер карты пациента</label>
+            <input type="text" name="NumberRecord" value="@Model.NumberRecord" /><br />
+            <label>Введите номер мед.полиса</label>
+            <input type="text" name="Insurance_policy" value="@Model.Insurance_policy" /><br />
+            <label>Введите дату рождения пациента</label>
+            <input type="text" name="BirthDate" value="@Model.BirthDate" /><br />
+            <label>Введите номер телефона пациента</label>
+            <input type="text" name="NumberPhone" value="@Model.NumberPhone" /><br />
+            <label>Введите адрес пациента</label>
+            <input type="text" name="Adress" value="@Model.Adress" /><br />
+            <input type="submit" value="Изменить данные карты" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>
+

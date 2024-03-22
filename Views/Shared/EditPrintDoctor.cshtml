@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Laba45.Models.Entity.Doctor>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PrintHospitals</title>
+</head>
+<body>
+    <h1 align="center">Врачи</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>Номер больницы</th>
+            <th>Адрес больницы</th>
+            <th>ID</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Профессия</th>
+            <th>Кабинет</th>
+            <th>Время начала работы</th>
+            <th>Время конца работы</th>
+            <th>Ссылк на изменениеданных</th>
+        </tr>
+        @{
+            foreach (var doctors in Model)
+            {
+                <tr>
+                    <td>@doctors.Hospital.NumberHospital</td>
+                    <td>@doctors.Hospital.Adress</td>
+                    <td>@doctors.Id</td>
+                    <td>@doctors.Surname</td>
+                    <td>@doctors.Name</td>
+                    <td>@doctors.Patronymic</td>
+                    <td>@doctors.Profession</td>
+                    <td>@doctors.CabinetNumber</td>
+                    <td>@doctors.StartHour</td>
+                    <td>@doctors.FinishHour</td>
+                    <td><a href="/Hospital/EditDoctor/@doctors.Id">Редактировать данные о враче</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

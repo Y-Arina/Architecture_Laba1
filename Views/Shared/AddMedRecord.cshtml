@@ -1,0 +1,44 @@
+﻿@model Guid
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddMedRecord</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("AddMedRecord2", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model">
+            <label>Введите номер карты пациента</label>
+            <input type="text" name="NumberRecord" /><br />
+            <label>Введите номер мед.полиса</label>
+            <input type="text" name="Insurance_policy" /><br />
+            <label>Введите дату рождения</label>
+            <input type="text" name="BirthDate" /><br />
+            <label>Введите номер телефона пациента</label>
+            <input type="text" name="NumberPhone" /><br />
+            <label>Введите адрес пациента</label>
+            <input type="text" name="Adress" /><br />
+            <input type="submit" value="Добавить карту" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MainPage</title>
+    <style>
+        .b{
+            height:50px;
+            width:300px;
+            font-size:20px;
+            background-color:cornflowerblue;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Главная страница</h1>
+    <div align="center">
+        <p1 align="center">Действия, связанные с больницами</p1>
+        @using (Html.BeginForm("PrintHospitals", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести больницы" class="b" />
+        }
+        @using (Html.BeginForm("AddHospitals", "Hospital"))
+        {
+            <input type="submit" value="Добавление больницы" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintHospital", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование больниц" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintHospital", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление больниц" class="b" />
+        }
+        @using (Html.BeginForm("SearchHospital", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск больниц" class="b" />
+        }
+        <br />
+
+        <p1 align="center">Действия, связанные с врачами</p1>
+        @using (Html.BeginForm("PrintDoctors", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести врачей" class="b" />
+        }
+        @using (Html.BeginForm("AddDocPrintHospital", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Добавление врачей" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintDoctor", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование врачей" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintDoctor", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление врачей" class="b" />
+        }
+        @using (Html.BeginForm("SearchDoctor", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск докторов" class="b" />
+        }
+        <br />
+
+        <p1 align="center">Действия, связанные с пациентами</p1>
+        @using (Html.BeginForm("PrintPatients", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести пациентов" class="b" />
+        }
+        @using (Html.BeginForm("AddPatientPrintDoc", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Добавление пациентов" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintPatient", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование пациентов" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintPatient", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление пациентов" class="b" />
+        }
+        @using (Html.BeginForm("SearchPatient", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск пациентов" class="b" />
+        }
+        <br />
+
+        <p1 align="center">Действия, связанные с больничными листами пациентов</p1>
+        @using (Html.BeginForm("PrintList", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести листы" class="b" />
+        }
+        @using (Html.BeginForm("AddListtPrintPatient", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Добавление листов" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintList", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование листов" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintList", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление листов" class="b" />
+        }
+        @using (Html.BeginForm("SearchList", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск листов" class="b" />
+        }
+        <br />
+
+        <p1 align="center">Действия, связанные с талонами пациентов</p1>
+        @using (Html.BeginForm("PrintReception", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести талоны" class="b" />
+        }
+        @using (Html.BeginForm("AddReceptionPrintPatient", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Добавление талонов" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintReception", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование талонов" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintReception", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление талонов" class="b" />
+        }
+        @using (Html.BeginForm("SearchReception", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск талонов" class="b" />
+        }
+        <br />
+
+        <p1 align="center">Действия, связанные с картами пациентов</p1>
+        @using (Html.BeginForm("PrintMedRecord", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести карты" class="b" />
+        }
+        @using (Html.BeginForm("AddMedRecordPrintPatient", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Добавление карты" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintMedRecord", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование карт" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintMedRecord", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление карт" class="b" />
+        }
+        @using (Html.BeginForm("SearchMedRecord", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск карт" class="b" />
+        }
+        <br />
+
+        <p1 align="center">Действия, связанные с мед.сестрами</p1>
+        @using (Html.BeginForm("PrintNurse", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Вывести мед.сестер" class="b" />
+        }
+        @using (Html.BeginForm("AddNursePrintDoc", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Добавление мед.сестры" class="b" />
+        }
+        @using (Html.BeginForm("EditPrintNurse", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Редактирование мед.сестер" class="b" />
+        }
+        @using (Html.BeginForm("DeletePrintNurse", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Удаление мед.сестер" class="b" />
+        }
+        @using (Html.BeginForm("SearchNurse", "Hospital", FormMethod.Get))
+        {
+            <input type="submit" value="Поиск мед.сестер" class="b" />
+        }
+    </div>
+</body>
+</html>

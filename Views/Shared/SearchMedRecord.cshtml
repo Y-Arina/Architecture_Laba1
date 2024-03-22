@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchHospital</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("SearchMedRecord1", "Hospital", FormMethod.Get))
+        {
+            <label>Введите номер полиса</label>
+            <input type="text" name="Insurance_policy" /><br />
+            <input type="submit" value="Искать" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

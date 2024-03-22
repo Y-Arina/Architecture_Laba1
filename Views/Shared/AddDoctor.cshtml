@@ -1,0 +1,49 @@
+﻿@model Guid
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddDoctor</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Добавление врача</h1>
+    <div align="center">
+        @using (Html.BeginForm("AddDoctor2", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model">
+            <label>Введите фамилию врача</label>
+            <input type="text" name="Surname" /><br />
+            <label>Введите имя врача</label>
+            <input type="text" name="Name" /><br />
+            <label>Введите отчество врача</label>
+            <input type="text" name="Patronymic" /><br />
+            <label>Введите профессию врача</label>
+            <input type="text" name="Profession" /><br />
+            <label>Введите кабинет врача</label>
+            <input type="text" name="CabinetNumber" /><br />
+            <label>Введите время начала работы врача</label>
+            <input type="text" name="StartHour" /><br />
+            <label>Введите время конца работы врача</label>
+            <input type="text" name="FinishHor" /><br />
+            <input type="submit" value="Добавить врача" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

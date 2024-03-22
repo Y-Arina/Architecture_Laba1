@@ -1,0 +1,45 @@
+﻿@model Laba45.Models.Entity.Hospital
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditHospital1</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("EditHospital1", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model.Id" >
+            <label>Введите номер больницы</label>
+            <input id="NumberHospital" type="text" name="NumberHospital" value="@Model.NumberHospital" /><br />
+            <label>Введлите адрес больницы</label>
+            <input id="Adress" type="text" name="Adress" value="@Model.Adress" /><br />
+            <label>Введите номер телефона больницы</label>
+            <input id="NumberPhone" type="text" name="NumberPhone" value="@Model.NumberPhone" /><br />
+            <lable>Введите время начала работы больницы</lable>
+            <input id="StartHours" type="text" name="StartHours" value="@Model.StartHours" /><br />
+            <label>Введите время конца работы больницы</label>
+            <input id="FinishHours" type="text" name="FinishHours" value="@Model.FinishHours" /><br />
+
+            <input type="submit" value="Редактировать больницу" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model Guid
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddReception</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Добавление талона</h1>
+    <div align="center">
+        @using (Html.BeginForm("AddReception2", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model">
+            <label>Введите дату, на которую записан пациент</label>
+            <input type="text" name="Date" /><br />
+            <label>Введите время, на которое записан пациент</label>
+            <input type="text" name="Time" /><br />
+            <input type="submit" value="Добавить талон" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Laba45.Models.Entity.Patient>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PrintPatients</title>
+</head>
+<body>
+    <h1 align="center">Пациенты</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>Фамилия лечащего врача</th>
+            <th>ID</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Ссылка на добавление талона</th>
+        </tr>
+        @{
+            foreach (var patients in Model)
+            {
+                <tr>
+                    <td>@patients.Doctor.Surname</td>
+                    <td>@patients.Id</td>
+                    <td>@patients.Surname</td>
+                    <td>@patients.Name</td>
+                    <td>@patients.Patronymic</td>
+                    <td><a href="/Hospital/AddReception/@patients.Id">Добавление талона</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>
+

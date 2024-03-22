@@ -1,0 +1,41 @@
+﻿@model Guid
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddList</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Добавление больничного листа</h1>
+    <div align="center">
+        @using (Html.BeginForm("AddList2", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model">
+            <label>Введите место работы пациента</label>
+            <input type="text" name="PlaceWork" /><br />
+            <label>Введите дату открытия больничного</label>
+            <input type="text" name="StartDate" /><br />
+            <label>Введите дату закрфтия больничного</label>
+            <input type="text" name="FinishDate" /><br />
+            <input type="submit" value="Добавить б.лист" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

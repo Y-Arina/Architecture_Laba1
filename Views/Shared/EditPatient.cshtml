@@ -1,0 +1,40 @@
+﻿@model Laba45.Models.Entity.Patient
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddPatient</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("EditPatient1", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model.Id">
+            <label>Введите фамилию пациента</label>
+            <input type="text" name="Surname" value="@Model.Surname" /><br />
+            <label>Введите имя пациента</label>
+            <input type="text" name="Name" value="@Model.Name" /><br />
+            <label>Введите отчество пациента</label>
+            <input type="text" name="Patronymic" value="@Model.Patronymic" /><br />
+            <input type="submit" value="Изменить данные о пациенте" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model Laba45.Models.Entity.Nurse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNurse</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("EditNurse1", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model.Id">
+            <label>Введите фамилию мед.сестры</label>
+            <input type="text" name="Surname" value="@Model.Surname" /><br />
+            <label>Введите имя мед.сестры</label>
+            <input type="text" name="Name" value="@Model.Name" /><br />
+            <label>Введите отчество мед.сестры</label>
+            <input type="text" name="Patronymic" value="@Model.Patronymic" /><br />
+            <label>Введите профессию</label>
+            <input type="text" name="Profession" value="@Model.Profession" /><br />
+            <input type="submit" value="Изменить данные о мед.сестре" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

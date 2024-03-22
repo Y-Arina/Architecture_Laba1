@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchDoctor</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("SearchDoctor1", "Hospital", FormMethod.Get))
+        {
+            <label>Введите фамилию врача</label>
+            <input type="text" name="Surname" /><br />
+            <label>Введите имя врача</label>
+            <input type="text" name="Nume" /><br />
+            <input type="submit" value="Искать" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model Laba45.Models.Entity.Reception
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddReception</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("EditReception1", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model.Id">
+            <label>Введите дату, на которое записан пациент</label>
+            <input type="text" name="Date" value="@Model.Date" /><br />
+            <label>Введите время на которое записан пациент</label>
+            <input type="text" name="Time" value="@Model.Time" /><br />
+            <input type="submit" value="Изменить данные талона" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>
+

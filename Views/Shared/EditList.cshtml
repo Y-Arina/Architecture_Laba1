@@ -1,0 +1,41 @@
+﻿@model Laba45.Models.Entity.Sick_List
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddList</title>
+    <style>
+        .b {
+            height: 50px;
+            width: 300px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("EditList1", "Hospital", FormMethod.Post))
+        {
+            <input id="Id" type="hidden" name="Id" value="@Model.Id">
+            <label>Введите место работы пациента</label>
+            <input type="text" name="PlaceWork" value="@Model.PlaceWork" /><br />
+            <label>Введите дату открытия б.листа</label>
+            <input type="text" name="StartDate" value="@Model.StartDate" /><br />
+            <label>Введите дфту закрытия б.листа</label>
+            <input type="text" name="FinishDate" value="@Model.FinishDate" /><br />
+            <input type="submit" value="Изменить данные б.листа" class="b" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>
+

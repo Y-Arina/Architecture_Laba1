@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Laba45.Models.Entity.Hospital>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditPrintHospital</title>
+</head>
+<body>
+    <h1 align="center">Больницы</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>ID</th>
+            <th>Номер</th>
+            <th>Адрес</th>
+            <th>Номер телефона</th>
+            <th>Время открытия</th>
+            <th>Время закрытия</th>
+            <th>Ссылка на редактирование</th>
+        </tr>
+        @{
+            foreach (var hospitals in Model)
+            {
+                <tr>
+                    <td>@hospitals.Id</td>
+                    <td>@hospitals.NumberHospital</td>
+                    <td>@hospitals.Adress</td>
+                    <td>@hospitals.NumberPhone</td>
+                    <td>@hospitals.StartHours</td>
+                    <td>@hospitals.FinishHours</td>
+                    <td><a href="/Hospital/EditHospital/@hospitals.Id">Редактировать данные больницы</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Вернуться на главную страницу", "MainPage")
+    </div>
+</body>
+</html>
